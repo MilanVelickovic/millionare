@@ -300,22 +300,20 @@ int showQuestionAndCheckAnswer(int questionNumber, Question* question, int helpO
 	printf("\n----------------------------------------------------------------------------\n");
 	// 1st: Calling indexOfTheCorrectAnswer function. Return value is a value of index of correctAnser in possibleAnswers array.
 	// 2nd: Function checkPlayerAnswer is comparing player's answer and returned value of indexOfTheCorrectAnswer function.
-	// 3nd: If compared values are equal, the user is able to approach next question.
+	// 3rd: If compared values are equal, the user is able to approach next question.
 	return checkPlayerAnswer(indexOfTheCorrectAnswer(possibleAnswers, 4, question->correctAnswer));
 }
 
 void showMessage(int counter, int milestoneIndex) {
+	printf("\n****************************************************************************\n");
 	if (counter == 15) {
-		printf("\n****************************************************************************\n");
 		printf("*                    CESTITAMO! POSTALI STE MILIONER!!!                    *\n");
 		printf("*                        OSVOJENA SUMA: %ddin                         *\n", rewards[counter - 1]);
-		printf("****************************************************************************\n\n\n");
 	}
-	else {
-		printf("\n****************************************************************************\n");
-		printf("*                        OSVOJENA SUMA: %ddin                         *\n", rewards[milestoneIndex] == 500 ? 0 : rewards[milestoneIndex]);
-		printf("****************************************************************************\n\n\n");
+	else {	
+		printf("*                        OSVOJENA SUMA: %ddin                         *\n", rewards[milestoneIndex] == 500 ? 0 : rewards[milestoneIndex]);	
 	}
+	printf("****************************************************************************\n\n\n");
 }
 
 void main() {
